@@ -112,3 +112,21 @@ h1 {
     font-size: 14px;
     color: #777;
 }
+
+select {
+    width: 100%; /* Largeur pleine du contenant */
+    padding: 8px; /* Espacement interne */
+    font-size: 16px; /* Taille de police */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 4px; /* Coins arrondis */
+    background-color: #fff; /* Fond blanc */
+    color: #333; /* Couleur du texte */
+    box-sizing: border-box; /* Boîte de dimension incluant la bordure */
+    margin-bottom: 10px; /* Marge en bas pour l'espacement */
+}
+
+/* Style spécifique au dropdown lorsque ouvert */
+select:focus {
+    outline: none; /* Supprime le contour de mise au point */
+    border-color: #4CAF50; /* Bordure verte lorsque focus */
+}

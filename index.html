@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet SIG</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <h1>Hello! TRAVEL WITH US</h1>
@@ -28,11 +36,14 @@
                     <button onclick="toggleMenu('searchByRoadName')">Search by Road Name</button>
                     <form id="searchByRoadName" style="display: none;" onsubmit="return searchByRoadName()">
                         <label for="roadName">Search by road name:</label>
-                        <input type="text" id="roadName" name="roadName">
+                        <select id="roadNameSelect" name="roadName">
+                            <!-- Options seront ajoutées dynamiquement par JavaScript -->
+                        </select>
                         <button type="submit">Search</button>
                     </form>
                 </li>
-                <li>
+                
+                <!-- <li>
                     <button onclick="toggleMenu('searchByCharacteristics')">Search by Characteristics</button>
                     <div class="search-bar" id="searchByCharacteristics" style="display: none;">
                         <label for="surfType">Surface Type:</label>
@@ -52,7 +63,6 @@
                             <option value="T">Temporaire</option>
                             <option value="S">Secondaire</option>
                             <option value="P">Principale</option>
-                            
                         </select>
                         
                         <label for="roadLength">Road Length (km):</label>
@@ -60,7 +70,7 @@
                         
                         <button onclick="searchByCharacteristics()">Search</button>
                     </div>
-                </li>
+                </li> -->
             </ul>
         </div>
         <div id="map"></div>
@@ -70,19 +80,16 @@
         ITU PROJECT - Mahaliana/Thomis/Tsiky/Nekena/Ninah
     </div>
     
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
     <script src="index.js"></script>
+
     <script>
         function toggleMenu(menuId) {
-            // Récupérer tous les menus
             var menus = document.querySelectorAll('.search-bar, form');
-            
-            // Cacher tous les menus
             menus.forEach(function(menu) {
                 menu.style.display = 'none';
             });
-            
-            // Afficher le menu spécifié par menuId
             var selectedMenu = document.getElementById(menuId);
             if (selectedMenu) {
                 selectedMenu.style.display = 'block';

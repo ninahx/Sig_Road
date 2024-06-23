@@ -43,10 +43,10 @@ const provinces = {
 
 
 const roadNames = [
-    { name: 'RN1', coords: ['Antsiranana', 'Toliary'] },
+    { name: 'RN1', coords: ['Antananarivo', 'Tsiroanomandidy'] },
     { name: 'RN2', coords: ['Toamasina', 'Morondava'] },
-    { name: 'RN3', coords: ['Antananarivo', 'Mahajanga'] },
-    { name: 'RN4', coords: ['Antananarivo', 'Fianarantsoa'] },
+    { name: 'RN3', coords: ['Antananarivo', 'Fianarantsoa'] },
+    { name: 'RN4', coords: ['Antananarivo', 'Mahajanga'] },
     { name: 'RN5', coords: ['Mahajanga', 'Antsiranana'] },
     { name: 'RN6', coords: ['Antananarivo', 'Toamasina'] },
     { name: 'RN7', coords: ['Antananarivo', 'Toliara'] },
